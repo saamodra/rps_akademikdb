@@ -13,15 +13,26 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card">
-                        <div class="card-header">
-                            <h5>#{bundle.ListProdiTitle}</h5>
-                        </div>
-                        <div class="card-block table-border-style">
-                            <h:form>
-                                <h:panelGroup id="messagePanel" layout="block">
+                        <h:form>
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5>#{bundle.ListProdiTitle}</h5>
+                                <h:commandLink action="#{prodiController.prepareCreate}" class="btn btn-primary btn-">
+                                    <i class="feather icon-plus-square"></i> #{bundle.ListProdiCreateLink}
+                                </h:commandLink>
+                            </div>
+                            <div class="card-block table-border-style">
+                                <h:panelGroup id="messagePanel" rendered="#{not empty facesContext.messageList}" class="alert alert-success alert-dismissible fade show" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </h:panelGroup>
-                                <h:dataTable value="#{prodiController.items}" var="item" class="table" id="example">
+                                <h:dataTable value="#{prodiController.items}" var="item" class="table datatable">
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#"/>
+                                        </f:facet>
+                                    </h:column>
                                     <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListProdiTitle_idProdi}"/>
@@ -36,23 +47,15 @@
                                     </h:column>
                                     <h:column>
                                         <f:facet name="header">
-                                            <h:outputText value="&nbsp;"/>
+                                            <h:outputText value="Aksi"/>
                                         </f:facet>
-                                        <h:commandLink action="#{prodiController.prepareView}" value="#{bundle.ListProdiViewLink}"/>
-                                        <h:outputText value=" "/>
-                                        <h:commandLink action="#{prodiController.prepareEdit}" value="#{bundle.ListProdiEditLink}"/>
-                                        <h:outputText value=" "/>
-                                        <h:commandLink action="#{prodiController.destroy}" value="#{bundle.ListProdiDestroyLink}"/>
+                                        <h:commandLink class="btn-sm btn btn-info mr-2" action="#{prodiController.prepareView}" value="#{bundle.ListProdiViewLink}"/>
+                                        <h:commandLink class="btn btn-warning btn-sm mr-2" action="#{prodiController.prepareEdit}" value="#{bundle.ListProdiEditLink}"/>
+                                        <h:commandLink class="btn btn-danger btn-sm" action="#{prodiController.destroy}" value="#{bundle.ListProdiDestroyLink}"/>
                                     </h:column>
                                 </h:dataTable>
-                                
-                                <br />
-                                <h:commandLink action="#{prodiController.prepareCreate}" value="#{bundle.ListProdiCreateLink}"/>
-                                <br />
-                                <br />
-                                <h:link outcome="/index" value="#{bundle.ListProdiIndexLink}"/>
-                            </h:form>
-                        </div>
+                            </div>
+                        </h:form>
                     </div>
                 </div>
             </div>

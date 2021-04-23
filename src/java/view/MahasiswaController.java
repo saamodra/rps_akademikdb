@@ -69,7 +69,7 @@ public class MahasiswaController implements Serializable {
 
     public String prepareView() {
         current = (Mahasiswa) getItems().getRowData();
-        selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
+        selectedItemIndex = getItems().getRowIndex();
         return "View";
     }
 
@@ -92,7 +92,7 @@ public class MahasiswaController implements Serializable {
 
     public String prepareEdit() {
         current = (Mahasiswa) getItems().getRowData();
-        selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
+        selectedItemIndex = getItems().getRowIndex();
         return "Edit";
     }
 
@@ -109,7 +109,7 @@ public class MahasiswaController implements Serializable {
 
     public String destroy() {
         current = (Mahasiswa) getItems().getRowData();
-        selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
+        selectedItemIndex = getItems().getRowIndex();
         performDestroy();
         recreatePagination();
         recreateModel();
@@ -155,7 +155,7 @@ public class MahasiswaController implements Serializable {
 
     public DataModel getItems() {
         if (items == null) {
-            items = getPagination().createPageDataModel();
+            items = new ListDataModel(getFacade().findAll());
         }
         return items;
     }
