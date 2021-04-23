@@ -10,30 +10,35 @@
             <h:outputText value="#{bundle.ViewProdiTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewProdiLabel_idProdi}"/>
-                    <h:outputText value="#{prodiController.selected.idProdi}" title="#{bundle.ViewProdiTitle_idProdi}"/>
-                    <h:outputText value="#{bundle.ViewProdiLabel_namaProdi}"/>
-                    <h:outputText value="#{prodiController.selected.namaProdi}" title="#{bundle.ViewProdiTitle_namaProdi}"/>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{prodiController.destroyAndView}" value="#{bundle.ViewProdiDestroyLink}"/>
-                <br />
-                <br />
-                <h:link outcome="Edit" value="#{bundle.ViewProdiEditLink}"/>
-                <br />
-                <h:commandLink action="#{prodiController.prepareCreate}" value="#{bundle.ViewProdiCreateLink}" />
-                <br />
-                <h:commandLink action="#{prodiController.prepareList}" value="#{bundle.ViewProdiShowAllLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ViewProdiIndexLink}"/>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5>#{bundle.ViewProdiTitle}</h5>
+                        </div>
+                        <div class="card-block table-border-style">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:form>
+                                <h:panelGrid columns="2" columnClasses="font-weight-bold pr-4, text-normal">
+                                    <h:outputText value="#{bundle.ViewProdiLabel_idProdi}" />
+                                    <h:outputText value="#{prodiController.selected.idProdi}" title="#{bundle.ViewProdiTitle_idProdi}"/>
+                                    <h:outputText value="#{bundle.ViewProdiLabel_namaProdi}"/>
+                                    <h:outputText value="#{prodiController.selected.namaProdi}" title="#{bundle.ViewProdiTitle_namaProdi}"/>
+                                </h:panelGrid>
+                                
+                                <div class="d-flex mt-4">
+                                    <h:link outcome="Edit" value="#{bundle.ViewProdiEditLink}" class="btn btn-warning" />
+                                    <h:commandLink action="#{prodiController.destroyAndView}" value="#{bundle.ViewProdiDestroyLink}" class="btn btn-danger" />
+                                    <h:commandLink action="#{prodiController.prepareList}" value="Kembali" class="btn btn-secondary" />
+                                </div>
 
-            </h:form>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </ui:define>
     </ui:composition>
 

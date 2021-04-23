@@ -10,4 +10,5 @@
         <property name="driverClass" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="java:app/jdbc/akademikdb" object-type="user" pool-name="microsoft_sql_AkademikDB_saPool"/>
+    <jdbc-resource enabled="true" jndi-name="java:app/jdbc/akademikdb" object-type="user" pool-name="microsoft_sql_AkademikDB_saPool"/>
 </resources>
