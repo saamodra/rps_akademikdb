@@ -13,21 +13,26 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card">
-                    <h:form>
-                        <div class="card-header d-flex justify-content-between align-items-center">
+                        <h:form>
+                            <div class="card-header d-flex justify-content-between align-items-center">
                                 <h5>#{bundle.ListMahasiswaTitle}</h5>
                                 <h:commandLink action="#{mahasiswaController.prepareCreate}" class="btn btn-primary btn-">
                                     <i class="feather icon-plus-square"></i> #{bundle.ListMahasiswaCreateLink}
                                 </h:commandLink>
-                        </div>
-                        <div class="card-block table-border-style">
+                            </div>
+                            <div class="card-block table-border-style">
                                 <h:panelGroup id="messagePanel" rendered="#{not empty facesContext.messageList}" class="alert alert-success alert-dismissible fade show" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </h:panelGroup>
-                                <h:dataTable value="#{mahasiswaController.items}" var="item" class="table">
+                                <h:dataTable value="#{mahasiswaController.items}" var="item" class="table datatable">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#"/>
+                                            </f:facet>
+                                        </h:column>
                                         <h:column>
                                             <f:facet name="header">
                                                 <h:outputText value="#{bundle.ListMahasiswaTitle_nim}"/>
@@ -59,13 +64,13 @@
                                             <h:outputText value="#{item.idProdi.namaProdi}"/>
                                         </h:column>
                                         <h:column>
-                                        <f:facet name="header">
-                                            <h:outputText value="Aksi"/>
-                                        </f:facet>
-                                        <h:commandLink class="btn-sm btn btn-info mr-2" action="#{mahasiswaController.prepareView}" value="#{bundle.ListMahasiswaViewLink}"/>
-                                        <h:commandLink class="btn btn-warning btn-sm mr-2" action="#{mahasiswaController.prepareEdit}" value="#{bundle.ListMahasiswaEditLink}"/>
-                                        <h:commandLink class="btn btn-danger btn-sm" action="#{mahasiswaController.destroy}" value="#{bundle.ListMahasiswaDestroyLink}"/>
-                                    </h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Aksi"/>
+                                            </f:facet>
+                                            <h:commandLink class="btn-sm btn btn-info mr-2" action="#{mahasiswaController.prepareView}" value="#{bundle.ListMahasiswaViewLink}"/>
+                                            <h:commandLink class="btn btn-warning btn-sm mr-2" action="#{mahasiswaController.prepareEdit}" value="#{bundle.ListMahasiswaEditLink}"/>
+                                            <h:commandLink class="btn btn-danger btn-sm" action="#{mahasiswaController.destroy}" value="#{bundle.ListMahasiswaDestroyLink}"/>
+                                        </h:column>
                                 </h:dataTable>
                             </div>
                         </h:form>
