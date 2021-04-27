@@ -10,9 +10,6 @@
 <!--            <h:outputText value="#{bundle.ViewMahasiswaTitle}"></h:outputText>-->
         </ui:define>
         <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card">
@@ -20,6 +17,9 @@
                             <h5>#{bundle.ViewMahasiswaTitle}</h5>
                         </div>
                         <div class="card-block table-border-style">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
                             <h:form>
                                 <h:panelGrid columns="2" columnClasses="font-weight-bold pr-4, text-normal">
                                     <h:outputText value="#{bundle.ViewMahasiswaLabel_nim}"/>

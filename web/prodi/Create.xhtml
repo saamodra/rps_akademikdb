@@ -17,13 +17,15 @@
                             <h5>#{bundle.CreateProdiTitle}</h5>
                         </div>
                         <div class="card-block table-border-style">
-                            <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                            </h:panelGroup>
                             <h:form>
                                 <div class="form-group">
                                     <h:outputLabel value="#{bundle.CreateProdiLabel_namaProdi}" for="namaProdi" />
-                                    <h:inputText id="namaProdi" class="form-control" value="#{prodiController.selected.namaProdi}" title="#{bundle.CreateProdiTitle_namaProdi}" required="true" requiredMessage="#{bundle.CreateProdiRequiredMessage_namaProdi}"/>
+                                    <h:inputText id="namaProdi" 
+                                                 binding="#{namaProdi}" 
+                                                 class="form-control #{!namaProdi.valid ? 'is-invalid' : ''}" value="#{prodiController.selected.namaProdi}" title="#{bundle.CreateProdiTitle_namaProdi}" required="true" requiredMessage="#{bundle.CreateProdiRequiredMessage_namaProdi}"/>
+                                    <div class="invalid-feedback">
+                                        <h:message for="namaProdi" class="text-danger" />
+                                    </div>
                                 </div>
                                     
                                 <div class="d-flex">
