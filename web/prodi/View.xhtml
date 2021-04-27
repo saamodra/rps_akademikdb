@@ -30,7 +30,7 @@
                                 
                                 <div class="d-flex mt-4">
                                     <h:link outcome="Edit" value="#{bundle.ViewProdiEditLink}" class="btn btn-warning" />
-                                    <h:commandLink action="#{prodiController.destroyAndView}" value="#{bundle.ViewProdiDestroyLink}" class="btn btn-danger" />
+                                    <h:commandLink action="#{prodiController.destroyAndView}" value="#{bundle.ViewProdiDestroyLink}" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')" />
                                     <h:commandLink action="#{prodiController.prepareList}" value="Kembali" class="btn btn-secondary" />
                                 </div>
 

@@ -51,7 +51,7 @@
                                         </f:facet>
                                         <h:commandLink class="btn-sm btn btn-info mr-2" action="#{prodiController.prepareView}" value="#{bundle.ListProdiViewLink}"/>
                                         <h:commandLink class="btn btn-warning btn-sm mr-2" action="#{prodiController.prepareEdit}" value="#{bundle.ListProdiEditLink}"/>
-                                        <h:commandLink class="btn btn-danger btn-sm" action="#{prodiController.destroy}" value="#{bundle.ListProdiDestroyLink}"/>
+                                        <h:commandLink class="btn btn-danger btn-sm" action="#{prodiController.destroy}" value="#{bundle.ListProdiDestroyLink}" onclick="return confirm('Yakin ingin menghapus data?')" />
                                     </h:column>
                                 </h:dataTable>
                             </div>

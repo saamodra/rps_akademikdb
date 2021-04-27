@@ -119,9 +119,9 @@ public class MahasiswaController implements Serializable {
     public String destroyAndView() {
         performDestroy();
         recreateModel();
-        updateCurrentItem();
+        //updateCurrentItem();
         if (selectedItemIndex >= 0) {
-            return "View";
+            return "List";
         } else {
             // all items were removed - go back to list
             recreateModel();
