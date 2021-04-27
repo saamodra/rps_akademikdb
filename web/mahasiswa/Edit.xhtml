@@ -10,48 +10,6 @@
             <h:outputText value="#{bundle.EditMahasiswaTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-<<<<<<< Updated upstream
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_nim}" for="nim" />
-                    <h:inputText id="nim" value="#{mahasiswaController.selected.nim}" title="#{bundle.EditMahasiswaTitle_nim}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_nim}"/>
-                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_namaMahasiswa}" for="namaMahasiswa" />
-                    <h:inputText id="namaMahasiswa" value="#{mahasiswaController.selected.namaMahasiswa}" title="#{bundle.EditMahasiswaTitle_namaMahasiswa}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_namaMahasiswa}"/>
-                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_tempatLahir}" for="tempatLahir" />
-                    <h:inputText id="tempatLahir" value="#{mahasiswaController.selected.tempatLahir}" title="#{bundle.EditMahasiswaTitle_tempatLahir}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_tempatLahir}"/>
-                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_tanggalLahir}" for="tanggalLahir" />
-                    <h:inputText id="tanggalLahir" value="#{mahasiswaController.selected.tanggalLahir}" title="#{bundle.EditMahasiswaTitle_tanggalLahir}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_tanggalLahir}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:inputText>
-                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_jenisKelamin}" for="jenisKelamin" />
-                    <h:inputText id="jenisKelamin" value="#{mahasiswaController.selected.jenisKelamin}" title="#{bundle.EditMahasiswaTitle_jenisKelamin}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_jenisKelamin}"/>
-                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_alamat}" for="alamat" />
-                    <h:inputText id="alamat" value="#{mahasiswaController.selected.alamat}" title="#{bundle.EditMahasiswaTitle_alamat}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_alamat}"/>
-                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_email}" for="email" />
-                    <h:inputText id="email" value="#{mahasiswaController.selected.email}" title="#{bundle.EditMahasiswaTitle_email}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_email}"/>
-                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_noHp}" for="noHp" />
-                    <h:inputText id="noHp" value="#{mahasiswaController.selected.noHp}" title="#{bundle.EditMahasiswaTitle_noHp}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_noHp}"/>
-                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_angkatan}" for="angkatan" />
-                    <h:inputText id="angkatan" value="#{mahasiswaController.selected.angkatan}" title="#{bundle.EditMahasiswaTitle_angkatan}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_angkatan}"/>
-                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_idProdi}" for="idProdi" />
-                    <h:selectOneMenu id="idProdi" value="#{mahasiswaController.selected.idProdi}" title="#{bundle.EditMahasiswaTitle_idProdi}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_idProdi}">
-                        <f:selectItems value="#{prodiController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <h:commandLink action="#{mahasiswaController.update}" value="#{bundle.EditMahasiswaSaveLink}"/>
-                <br />
-                <br />
-                <h:link outcome="View" value="#{bundle.EditMahasiswaViewLink}"/>
-                <br />
-                <h:commandLink action="#{mahasiswaController.prepareList}" value="#{bundle.EditMahasiswaShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.EditMahasiswaIndexLink}" />
-            </h:form>
-||||||| constructed merge base
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card">
@@ -122,77 +80,6 @@
                     </div>
                 </div>
             </div>
-=======
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <h5>#{bundle.EditMahasiswaTitle}</h5>
-                        </div>
-                        <div class="card-block table-border-style">
-                            <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                            </h:panelGroup>
-                            <h:form>
-                                <div class="form-group">
-                                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_nim}" for="nim" />
-                                    <h:inputText id="nim" class="form-control" value="#{mahasiswaController.selected.nim}" title="#{bundle.EditMahasiswaTitle_nim}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_nim}"/>
-                                </div>
-                                <div class="form-group">
-                                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_namaMahasiswa}" for="namaMahasiswa" />
-                                    <h:inputText id="namaMahasiswa" class="form-control" value="#{mahasiswaController.selected.namaMahasiswa}" title="#{bundle.EditMahasiswaTitle_namaMahasiswa}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_namaMahasiswa}"/>
-                                </div>
-                                <div class="form-group">
-                                     <h:outputLabel value="#{bundle.EditMahasiswaLabel_tempatLahir}" for="tempatLahir" />
-                                    <h:inputText id="tempatLahir" class="form-control" value="#{mahasiswaController.selected.tempatLahir}" title="#{bundle.EditMahasiswaTitle_tempatLahir}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_tempatLahir}"/>
-                                </div>
-                                <div class="form-group">
-                                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_tanggalLahir}" for="tanggalLahir" />
-                                    <h:inputText id="tanggalLahir" value="#{mahasiswaController.selected.tanggalLahir}" title="#{bundle.EditMahasiswaTitle_tanggalLahir}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_tanggalLahir}" class="datepicker form-control" >
-                                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                                    </h:inputText>                                
-                                </div>
-                                <div class="form-group">
-                                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_jenisKelamin}" for="jenisKelamin" />
-                                    <h:selectOneRadio value = "#{mahasiswaController.selected.jenisKelamin}" class="col-lg-2" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_jenisKelamin}"> 
-                                        <f:selectItem itemValue = "1" itemLabel = "&nbsp;Laki-laki"/> 
-                                        <f:selectItem itemValue = "2" itemLabel = "&nbsp;Perempuan" />
-                                     </h:selectOneRadio>
-                                </div>
-                                <div class="form-group">
-                                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_alamat}" for="alamat" />
-                                    <h:inputTextarea id="alamat" class="form-control" value="#{mahasiswaController.selected.alamat}" title="#{bundle.EditMahasiswaTitle_alamat}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_alamat}"/>
-                                </div>
-                                <div class="form-group">
-                                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_email}" for="email" />
-                                    <h:inputText id="email" class="form-control" value="#{mahasiswaController.selected.email}" title="#{bundle.EditMahasiswaTitle_email}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_email}" validatorMessage="Format email salah!" >
-                                        <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
-                                    </h:inputText>
-                                </div>
-                                <div class="form-group">
-                                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_noHp}" for="noHp" />
-                                    <h:inputText onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" maxlength="13" id="noHp" class="form-control" value="#{mahasiswaController.selected.noHp}" title="#{bundle.EditMahasiswaTitle_noHp}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_noHp}"/>
-                                </div>
-                                <div class="form-group">
-                                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_angkatan}" for="angkatan" />
-                                    <h:inputText onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" maxlength="4" id="angkatan" class="form-control" value="#{mahasiswaController.selected.angkatan}" title="#{bundle.EditMahasiswaTitle_angkatan}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_angkatan}"/>
-                                </div>
-                                <div class="form-group">
-                                    <h:outputLabel value="#{bundle.EditMahasiswaLabel_idProdi}" for="idProdi" />
-                                    <h:selectOneMenu id="idProdi" class="form-control custom-select" value="#{mahasiswaController.selected.idProdi}" title="#{bundle.EditMahasiswaTitle_idProdi}" required="true" requiredMessage="#{bundle.EditMahasiswaRequiredMessage_idProdi}">
-                                        <f:selectItems value="#{prodiController.itemsAvailableSelectOne}"/>
-                                    </h:selectOneMenu>
-                                </div>
-                                <div class="d-flex">
-                                    <h:commandLink action="#{mahasiswaController.update}" value="Simpan" class="btn btn-primary mr-2"/>
-                                    <h:commandLink action="#{mahasiswaController.prepareList}" value="Kembali" immediate="true" class="btn btn-secondary"/>
-                                </div>
-                            </h:form>
-                        </div>
-                    </div>
-                </div>
-            </div>
->>>>>>> Stashed changes
         </ui:define>
     </ui:composition>
 
