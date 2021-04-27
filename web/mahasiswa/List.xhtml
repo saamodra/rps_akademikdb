@@ -69,7 +69,7 @@
                                             </f:facet>
                                             <h:commandLink class="btn-sm btn btn-info mr-2" action="#{mahasiswaController.prepareView}" value="#{bundle.ListMahasiswaViewLink}"/>
                                             <h:commandLink class="btn btn-warning btn-sm mr-2" action="#{mahasiswaController.prepareEdit}" value="#{bundle.ListMahasiswaEditLink}"/>
-                                            <h:commandLink class="btn btn-danger btn-sm" action="#{mahasiswaController.destroy}" value="#{bundle.ListMahasiswaDestroyLink}"/>
+                                            <h:commandLink class="btn btn-danger btn-sm" action="#{mahasiswaController.destroy}" value="#{bundle.ListMahasiswaDestroyLink}" onclick="return confirm('Yakin ingin menghapus data?')" />
                                         </h:column>
                                 </h:dataTable>
                             </div>

@@ -47,7 +47,7 @@
                                 </h:panelGrid>
                                 <div class="d-flex mt-4">
                                     <h:link outcome="Edit" value="#{bundle.ViewMahasiswaEditLink}" class="btn btn-warning" />
-                                    <h:commandLink action="#{mahasiswaController.destroyAndView}" value="#{bundle.ViewMahasiswaDestroyLink}" class="btn btn-danger" />
+                                    <h:commandLink action="#{mahasiswaController.destroyAndView}" value="#{bundle.ViewMahasiswaDestroyLink}" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')" />
                                     <h:commandLink action="#{mahasiswaController.prepareList}" value="Kembali" class="btn btn-secondary" />
                                 </div>
                             </h:form>
