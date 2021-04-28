@@ -20,7 +20,10 @@
                             <h:form>
                                 <div class="form-group">
                                     <h:outputLabel value="#{bundle.CreateMahasiswaLabel_nim}" for="nim" />
-                                    <h:inputText id="nim" binding="#{nim}" class="form-control #{!nim.valid ? 'is-invalid' : ''}" value="#{mahasiswaController.selected.nim}" title="#{bundle.CreateMahasiswaTitle_nim}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_nim}"/>
+                                    <h:inputText id="nim" binding="#{nim}" class="form-control #{!nim.valid ? 'is-invalid' : ''}" 
+                                                 value="#{mahasiswaController.selected.nim}" title="#{bundle.CreateMahasiswaTitle_nim}" 
+                                                 required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_nim}"/>
+                                    
                                     <div class="invalid-feedback">
                                         <h:message for="nim" class="text-danger" />
                                     </div>

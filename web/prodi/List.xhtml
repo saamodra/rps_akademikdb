@@ -21,7 +21,8 @@
                                 </h:commandLink>
                             </div>
                             <div class="card-block table-border-style">
-                                <h:panelGroup id="messagePanel" rendered="#{not empty facesContext.messageList}" class="alert alert-success alert-dismissible fade show" layout="block">
+                                <h:panelGroup id="messagePanel" rendered="#{not empty facesContext.messageList}" 
+                                              class="alert alert-success alert-dismissible fade show" layout="block">
                                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
@@ -33,12 +34,12 @@
                                             <h:outputText value="#"/>
                                         </f:facet>
                                     </h:column>
-                                    <h:column>
+<!--                                    <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListProdiTitle_idProdi}"/>
                                         </f:facet>
                                         <h:outputText value="#{item.idProdi}"/>
-                                    </h:column>
+                                    </h:column>-->
                                     <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListProdiTitle_namaProdi}"/>

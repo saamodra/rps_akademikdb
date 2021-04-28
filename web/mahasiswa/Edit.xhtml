@@ -20,7 +20,7 @@
                             <h:form>
                                 <div class="form-group">
                                     <h:outputLabel value="#{bundle.CreateMahasiswaLabel_nim}" for="nim" />
-                                    <h:inputText id="nim" binding="#{nim}" class="form-control #{!nim.valid ? 'is-invalid' : ''}" value="#{mahasiswaController.selected.nim}" title="#{bundle.CreateMahasiswaTitle_nim}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_nim}"/>
+                                    <h:inputText id="nim" binding="#{nim}" class="form-control #{!nim.valid ? 'is-invalid' : ''}" value="#{mahasiswaController.selected.nim}" title="#{bundle.CreateMahasiswaTitle_nim}" required="true" requiredMessage="#{bundle.CreateMahasiswaRequiredMessage_nim}" readonly="true" />
                                     <div class="invalid-feedback">
                                         <h:message for="nim" class="text-danger" />
                                     </div>
@@ -98,8 +98,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex">
-                                    <h:commandLink action="#{mahasiswaController.update}" value="Ubah" class="btn btn-warning"/>
-                                    <h:link outcome="View" value="Detail" class="btn btn-info"/>
+                                    <h:commandLink action="#{mahasiswaController.update}" value="Simpan" class="btn btn-primary"/>
                                     <h:commandLink action="#{mahasiswaController.prepareList}" value="Kembali" immediate="true" class="btn btn-secondary"/>
                                 </div>
                             </h:form>
