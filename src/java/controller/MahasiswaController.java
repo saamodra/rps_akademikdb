@@ -1,9 +1,9 @@
-package view;
+package controller;
 
 import model.Mahasiswa;
 import view.util.JsfUtil;
 import view.util.PaginationHelper;
-import controller.MahasiswaFacade;
+import facade.MahasiswaFacade;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
@@ -26,7 +26,7 @@ public class MahasiswaController implements Serializable {
     private Mahasiswa current;
     private DataModel items = null;
     @EJB
-    private controller.MahasiswaFacade ejbFacade;
+    private facade.MahasiswaFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 

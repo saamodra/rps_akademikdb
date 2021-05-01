@@ -32,16 +32,18 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Prodi.findAll", query = "SELECT p FROM Prodi p"),
+    @NamedQuery(name = "Prodi.getLast", query = "SELECT p FROM Prodi p ORDER BY p.idProdi DESC"),
     @NamedQuery(name = "Prodi.findByIdProdi", query = "SELECT p FROM Prodi p WHERE p.idProdi = :idProdi"),
     @NamedQuery(name = "Prodi.findByNamaProdi", query = "SELECT p FROM Prodi p WHERE p.namaProdi = :namaProdi")})
 public class Prodi implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 10)
     @Column(name = "idProdi")
-    private Integer idProdi;
+    private String idProdi;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
@@ -53,20 +55,20 @@ public class Prodi implements Serializable {
     public Prodi() {
     }
 
-    public Prodi(Integer idProdi) {
+    public Prodi(String idProdi) {
         this.idProdi = idProdi;
     }
 
-    public Prodi(Integer idProdi, String namaProdi) {
+    public Prodi(String idProdi, String namaProdi) {
         this.idProdi = idProdi;
         this.namaProdi = namaProdi;
     }
 
-    public Integer getIdProdi() {
+    public String getIdProdi() {
         return idProdi;
     }
 
-    public void setIdProdi(Integer idProdi) {
+    public void setIdProdi(String idProdi) {
         this.idProdi = idProdi;
     }
 

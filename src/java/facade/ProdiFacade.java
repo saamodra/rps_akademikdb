@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller;
+package facade;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import model.Mahasiswa;
+import model.Prodi;
 
 /**
  *
  * @author putri ramadani rais
  */
 @Stateless
-public class MahasiswaFacade extends AbstractFacade<Mahasiswa> {
+public class ProdiFacade extends AbstractFacade<Prodi> {
 
     @PersistenceContext(unitName = "RPS_AKADEMIK_KEL4PU")
     private EntityManager em;
@@ -25,8 +25,17 @@ public class MahasiswaFacade extends AbstractFacade<Mahasiswa> {
         return em;
     }
 
-    public MahasiswaFacade() {
-        super(Mahasiswa.class);
+    public ProdiFacade() {
+        super(Prodi.class);
+    }
+    
+    public Prodi getLastProdi() {
+        return em
+                .createNamedQuery("Prodi.getLast", Prodi.class)
+                .getResultList()
+                .stream()
+                .findFirst()
+                .orElse(null);
     }
     
 }

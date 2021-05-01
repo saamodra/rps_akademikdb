@@ -1,9 +1,9 @@
-package view;
+package controller;
 
 import model.Prodi;
 import view.util.JsfUtil;
 import view.util.PaginationHelper;
-import controller.ProdiFacade;
+import facade.ProdiFacade;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
@@ -25,7 +25,7 @@ public class ProdiController implements Serializable {
     private Prodi current;
     private DataModel items = null;
     @EJB
-    private controller.ProdiFacade ejbFacade;
+    private facade.ProdiFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
@@ -61,6 +61,14 @@ public class ProdiController implements Serializable {
         }
         return pagination;
     }
+    
+    public String getGeneratedId() {
+        Prodi prodi = getFacade().getLastProdi();
+        String id = prodi.getIdProdi().replace("PRD", "");
+        int newId = Integer.parseInt(id) + 1;
+        
+        return "PRD" + String.format("%03d", newId);
+    }
 
     public String prepareList() {
         recreateModel();
@@ -81,6 +89,7 @@ public class ProdiController implements Serializable {
 
     public String create() {
         try {
+            current.setIdProdi(getGeneratedId());
             getFacade().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("ProdiCreated"));
             return prepareList();
@@ -159,6 +168,8 @@ public class ProdiController implements Serializable {
         }
         return items;
     }
+    
+    
 
     private void recreateModel() {
         items = null;
@@ -188,7 +199,7 @@ public class ProdiController implements Serializable {
         return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
     }
 
-    public Prodi getProdi(java.lang.Integer id) {
+    public Prodi getProdi(java.lang.String id) {
         return ejbFacade.find(id);
     }
 
@@ -205,13 +216,13 @@ public class ProdiController implements Serializable {
             return controller.getProdi(getKey(value));
         }
 
-        java.lang.Integer getKey(String value) {
-            java.lang.Integer key;
-            key = Integer.valueOf(value);
+        java.lang.String getKey(String value) {
+            java.lang.String key;
+            key = value;
             return key;
         }
 
-        String getStringKey(java.lang.Integer value) {
+        String getStringKey(java.lang.String value) {
             StringBuilder sb = new StringBuilder();
             sb.append(value);
             return sb.toString();
